@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+</head>
+
+<body>
+
+    <h1>AJAX Program</h1>
+
+    <button onclick="loadData()">Load Data</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function loadData()
+        {
+            // Create XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Handle server response
+            xhr.onreadystatechange = function()
+            {
+                if(xhr.readyState == 4 && xhr.status == 200)
+                {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                }
+            };
+
+            // Open request
+            xhr.open("GET", "data.txt", true);
+
+            // Send request
+            xhr.send();
+        }
+
+    </script>
+
+</body>
+</html>
