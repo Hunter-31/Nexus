@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback Form</title>
+    </head>
+    <body>
+        <h1>Feedback Form:</h1>
+        <form method="POST">
+            <input type="text" name="Feedback" placeholder="Write Feedback"> <br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <h2>All Feedbacks: </h2>
+        {% for i in data %}
+        <p>{{i}}</p>
+        {% endfor %}
+    </body>
+</html>
